@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface DebugShadowDropdown {
+    }
     interface SlAlert {
         /**
           * Set to true to make the alert closable.
@@ -1144,6 +1146,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLDebugShadowDropdownElement extends Components.DebugShadowDropdown, HTMLStencilElement {
+    }
+    var HTMLDebugShadowDropdownElement: {
+        prototype: HTMLDebugShadowDropdownElement;
+        new (): HTMLDebugShadowDropdownElement;
+    };
     interface HTMLSlAlertElement extends Components.SlAlert, HTMLStencilElement {
     }
     var HTMLSlAlertElement: {
@@ -1379,6 +1387,7 @@ declare global {
         new (): HTMLSlTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "debug-shadow-dropdown": HTMLDebugShadowDropdownElement;
         "sl-alert": HTMLSlAlertElement;
         "sl-animation": HTMLSlAnimationElement;
         "sl-avatar": HTMLSlAvatarElement;
@@ -1421,6 +1430,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface DebugShadowDropdown {
+    }
     interface SlAlert {
         /**
           * Set to true to make the alert closable.
@@ -2590,6 +2601,7 @@ declare namespace LocalJSX {
         "trigger"?: string;
     }
     interface IntrinsicElements {
+        "debug-shadow-dropdown": DebugShadowDropdown;
         "sl-alert": SlAlert;
         "sl-animation": SlAnimation;
         "sl-avatar": SlAvatar;
@@ -2635,6 +2647,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "debug-shadow-dropdown": LocalJSX.DebugShadowDropdown & JSXBase.HTMLAttributes<HTMLDebugShadowDropdownElement>;
             "sl-alert": LocalJSX.SlAlert & JSXBase.HTMLAttributes<HTMLSlAlertElement>;
             "sl-animation": LocalJSX.SlAnimation & JSXBase.HTMLAttributes<HTMLSlAnimationElement>;
             "sl-avatar": LocalJSX.SlAvatar & JSXBase.HTMLAttributes<HTMLSlAvatarElement>;
